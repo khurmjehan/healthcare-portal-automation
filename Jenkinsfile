@@ -27,7 +27,9 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline execution complete.'
+            echo 'Publishing Cucumber HTML Test Report...'
+            cucumber fileIncludePattern: '**/*.json',
+                     sortingMethod: 'ALPHANUMERIC'
         }
     }
 }
