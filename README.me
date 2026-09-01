@@ -1,0 +1,35 @@
+# Healthcare Portal BDD Automation Framework
+
+A robust, enterprise-grade BDD Test Automation Framework built for a Healthcare Portal application. This project automates core functional requirements (FR-01 through FR-05) and non-functional compliance requirements (NFR-01 & NFR-04) including Security, Patient Intake, Scheduling, EHR Records, Billing, and API Performance.
+
+---
+
+## 🛠️ Tech Stack & Prerequisites
+
+* **Language:** Java 21
+* **Web Automation:** Selenium WebDriver 4.18.1
+* **API Testing:** RestAssured 5.4.0
+* **BDD Framework:** Cucumber Java 7.15.0
+* **Test Runner:** TestNG 7.9.0
+* **Build Tool:** Apache Maven
+* **Design Pattern:** Page Object Model (POM)
+
+---
+
+## 📁 Project Structure
+
+```text
+healthcare-portal-automation/
+├── src/
+│   ├── main/java
+│   └── test/
+│       ├── java/
+│       │   ├── pages/            # Page Object Model classes
+│       │   ├── runners/          # Cucumber TestRunner (TestNG)
+│       │   └── stepDefinitions/  # BDD Step Glue Code & Hooks
+│       └── resources/
+│           └── features/         # Gherkin Feature Files (.feature)
+├── target/                       # Generated execution reports & artifacts
+├── Jenkinsfile                   # Declarative CI/CD pipeline definition
+└── pom.xml                       # Maven dependencies & build management
+
