@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'Java21'
-        maven 'Maven3'
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -15,23 +10,20 @@ pipeline {
 
         stage('Compile & Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Execute BDD Test Suite') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
 
     post {
         always {
-            echo 'Publishing Cucumber Execution Reports...'
-            cucumber buildStatus: 'UNSTABLE',
-                     fileIncludePattern: '**/cucumber.json',
-                     jsonReportDirectory: 'target/cucumber-reports'
+            echo 'Pipeline execution complete.'
         }
     }
 }
