@@ -29,7 +29,8 @@ pipeline {
         always {
             echo 'Publishing Cucumber HTML Test Report...'
             cucumber fileIncludePattern: '**/*.json',
-                     sortingMethod: 'ALPHANUMERIC'
+                     sortingMethod: 'NATURAL'
         }
     }
 }
+
